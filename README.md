@@ -3,6 +3,21 @@
 社内ツール向けの **管理画面の土台** だけが入った Next.js プロジェクト。
 新しい業務システムを作るときの出発点として使う。
 
+## どのプロジェクトからでも `/add-auth` で組み込めるスキルを入れる（推奨）
+
+このリポジトリには `share/add-auth.md` という Claude Code 用のグローバルスキルが含まれている。
+これを `~/.claude/commands/` に置けば、別のプロジェクトでも `/add-auth` と打つだけで認証機能を組み込める。
+
+インストール（1回だけ）:
+
+```bash
+mkdir -p ~/.claude/commands && \
+  curl -sL https://raw.githubusercontent.com/Makoto-Kokusho/admin-auth-starter/main/share/add-auth.md \
+  -o ~/.claude/commands/add-auth.md
+```
+
+使い方: 認証を追加したいプロジェクトのフォルダで Claude Code を起動し、`/add-auth` を実行。
+
 ## 入っているもの
 
 - **ログイン画面** （パスキー / パスワード / メール magic link）
